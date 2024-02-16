@@ -106,14 +106,10 @@ const navigation = [
                 }
             },
             pivotReport && {
-                name: 'Say-Do-Ratio',
+                name: 'Say-Do Ratio',
                 id: 'R-SDR',
                 url: '/reports/say-do-ratio',
-                icon: 'fa fa-table',
-                badge: {
-                    variant: 'success',
-                    text: 'BETA'
-                }
+                icon: 'fa fa-table'
             },
             worklogReportOld && {
                 name: 'Worklog Report',
