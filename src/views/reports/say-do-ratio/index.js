@@ -54,7 +54,7 @@ function SayDoRatioReport() {
                             {loop(settings.noOfSprints, (i) => <Column key={i} className="text-center">Sprint {i + 1}</Column>)}
                         </tr>
                     </THead>
-                    <TBody>
+                    <TBody className="no-log-bg-hl">
                         {(b) => <tr key={b.id}>
                             <td>{b.name}</td>
                             {b.sayDoRatio && <td className={getLogClass(b.sayDoRatio)}>
