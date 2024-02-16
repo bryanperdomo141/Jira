@@ -1,7 +1,9 @@
 import { inject } from "src/services";
+const settingsName = 'reports_SayDoRatioReport';
 
-export async function getSprintWiseSayDoRatio({ sprintBoards, noOfSprints, velocitySprints }) {
-    const { $sprint, $session } = inject('SprintService', 'SessionService');
+export async function getSprintWiseSayDoRatio(settings) {
+    const { sprintBoards, noOfSprints, velocitySprints } = settings;
+    const { $sprint, $session, $config } = inject('SprintService', 'SessionService', 'ConfigService');
     const result = [];
     const storyPointField = $session.CurrentUser.storyPointField?.id;
     for (const { id, name } of sprintBoards) {
@@ -13,5 +15,13 @@ export async function getSprintWiseSayDoRatio({ sprintBoards, noOfSprints, veloc
         }
         result.push({ id, name, sprintList, averageCommitted, averageCompleted, sayDoRatio });
     }
+
+    await $config.saveSettings(settingsName, settings);
+
     return result;
+}
+
+export function getSettings() {
+    const { $session } = inject('SessionService');
+    return $session.pageSettings[settingsName] || { sprintBoards: [], noOfSprints: 6, velocitySprints: 6 };
 }

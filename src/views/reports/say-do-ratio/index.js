@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSprintWiseSayDoRatio } from './helper';
+import { getSprintWiseSayDoRatio, getSettings } from './helper';
 import GadgetLayout from '../../../gadgets/Gadget';
 import ReportSettings from './settings';
 import useToggler from 'react-controls/hooks/useToggler';
@@ -9,7 +9,7 @@ import SayDoRatioChart from './SayDoRatioChart';
 function SayDoRatioReport(props) {
     const [isLoading, setLoader] = React.useState(false);
     const [editMode, toggleEdit] = useToggler(true);
-    const [settings, updateSettings] = React.useState({ sprintBoards: [], noOfSprints: 6, velocitySprints: 6 });
+    const [settings, updateSettings] = React.useState(getSettings());
     const [reportData, setReportData] = React.useState([]);
     const $this = React.useRef({});
     $this.current.settings = settings;
