@@ -109,7 +109,7 @@ const navigation = [
                 name: 'Say-Do Ratio',
                 id: 'R-SDR',
                 url: '/reports/say-do-ratio',
-                icon: 'fa fa-table'
+                icon: 'fa fa-chart-line'
             },
             worklogReportOld && {
                 name: 'Worklog Report',

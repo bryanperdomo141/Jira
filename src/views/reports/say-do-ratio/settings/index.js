@@ -48,7 +48,7 @@ function ReportSettings({ settings: actualSettings, show, onHide, onDone }) {
                     Minimum value allowed is 3.
                 </span>
             </div>
-            {settings?.storyPointField && <div className="p-3">
+            {!settings?.storyPointField && <div className="p-3">
                 <label className="font-bold pb-2 block">Story Points field unavailable:</label>
                 Select value for "Story Points field" under General settings -&gt; "Default Values" tab.
                 This report cannot be generated without having that setting configured.
