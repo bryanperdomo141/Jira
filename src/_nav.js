@@ -105,6 +105,16 @@ const navigation = [
                     text: 'BETA'
                 }
             },
+            pivotReport && {
+                name: 'Say-Do-Ratio',
+                id: 'R-SDR',
+                url: '/reports/say-do-ratio',
+                icon: 'fa fa-table',
+                badge: {
+                    variant: 'success',
+                    text: 'BETA'
+                }
+            },
             worklogReportOld && {
                 name: 'Worklog Report',
                 id: 'R-UD',
@@ -139,8 +149,8 @@ const navigation = [
                 url: '/reports/advanced',
                 icon: 'fa fa-table',
                 badge: {
-                    variant: 'success',
-                    text: 'BETA'
+                    variant: 'danger',
+                    text: 'DEPR'
                 }
             }
         ].filter(Boolean)
